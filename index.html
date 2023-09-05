@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaPal</title>
+    <link rel="icon" href="./assets/FavIcos/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Responsive.css">
+    <script type="module" src="scripts/controller/pizza-controller.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script defer type="module" src="scripts/services/payment.js"></script>
+    <script defer src="./scripts/controller/cart-ui-operations.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>        
+                <h1 class="shadow-lg p-3 mb-5 bg-body-tertiary rounded text-center">
+                    PizzaPal: Your Slice of Joy!
+                </h1>        
+        </header>
+        <section>
+            <div class="row shadow-lg p-3 mb-5 bg-body-tertiary rounded pizza-section justify-content-sm-center">
+                <div class="col-8" > 
+                    <div class="hot-spicy-served d-flex flex-column justify-content-center ">
+                        <h1>Hot Spicy Served!</h1>
+                        <span class=" d-lg-none d-flex justify-content-center "><button id="show-cart-section-btn" class="my-3">Show my Cart</button></span>
+                    </div>
+                  <div class = "row row-gap-2" id = "pizza-output">
+
+                  </div>                  
+                </div>
+                <div class="col-4 position-relative cart-section">
+                    <div class=" cart-header d-flex justify-content-center">
+                        <span class="fs-2 fw-bold">My Cart</span> <span class="btn btn-danger ms-4 px-1 py-2 fw-bolder align-middle" id="emptyCartId" >Empty Cart</span>
+                        <span><button id="close-cart-section-btn" class="close-cart-section">&#x2716;</button></span>
+                    </div>
+                    <div class="card position-relative start-50 translate-middle-x mt-2" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 id="totalAmount" class="card-title">Total Amount: Rs. 0</h5>
+                          <p class="card-text">Click on pay button to proceed for payment</p>                      
+                          <button class="btn btn-primary" id="rzp-button1">Pay</button>
+                        </div>
+                    </div>                 
+                        <div class=" basket-section row row-gap-3 position-absolute start-50 translate-middle-x overflow-y-scroll overflow-x-hidden h-25 shadow-lg mt-3 p-3 mb-5 bg-body-tertiary rounded d-flex justify-content-center" id="basket-output">
+                            <div class="card" style="width: 18rem;">
+                                <img src="./assets/Images/cart.jpeg" class="card-img-top" alt="">
+                                <div class="card-body">
+                                  <h3 class="card-text text-center">Empty Cart</h3>
+                                </div>
+                              </div>
+                        </div>   
+                </div>
+                
+            <div>
+        </section>
+        <footer>
+            <div class="d-flex flex-column align-items-center justify-content-evenly ">
+               <p class="fs-2 ">Made by Neelesh Joshi <span><a href="https://github.com/Neeltyper001/" target="_main"><i class="fa-brands fa-github"></i></a></span></p>  
+               <p class="fs-5 fw-bold">copyright &copy; 2023. All rights reserved</p> 
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
